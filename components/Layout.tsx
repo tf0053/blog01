@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import { basePath } from "../settings";
 import { type ReactNode } from "react";
 
 const siteTitle = "My blog";
@@ -9,6 +10,11 @@ export default function Layout({ children }: { children: ReactNode }) {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-800 dark:text-gray-100">
       <Head>
         <title>{siteTitle}</title>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          href={`${basePath}/feed.xml`}
+        />
       </Head>
       <header className="container mx-auto max-w-2xl px-8 py-12">
         <nav>

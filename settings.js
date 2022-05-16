@@ -1,3 +1,6 @@
+const basePath = "/blog01";
+
 module.exports = {
-  siteBaseUrl: process.env.BASE_URL || "https://r7kamura.github.io/diary",
+  basePath,
+  siteBaseUrl: process.env.BASE_URL || `https://tf0053.github.io${basePath}`,
 };
