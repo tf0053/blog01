@@ -5,11 +5,11 @@ import { formatInTimeZone } from "date-fns-tz";
 
 export async function generateFeed(): Promise<string> {
   const rss = new RSS({
-    description: "r7kamura's daily working log.",
+    description: "Scribbling working memo",
     feed_url: `${siteBaseUrl}/feed.xml`,
-    generator: "r7kamura/diary",
+    generator: "tf0053/blog01",
     site_url: `${siteBaseUrl}/`,
-    title: "r7kamura/diary",
+    title: "tf0053/blog01",
   });
 
   let fullIssues = await listFullIssues({ limit: 20 });
@@ -19,7 +19,7 @@ export async function generateFeed(): Promise<string> {
       fullIssue.title <
       formatInTimeZone(
         new Date(fullIssue.created_at),
-        "Asia/Tokyo",
+        "Europe/Berlin",
         "yyyy-MM-dd"
       )
     ) {
